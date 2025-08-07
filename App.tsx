@@ -6,15 +6,14 @@ export default function App() {
     <View style={styles.container}>
       <View
         onTouchStart={(event) => {
-          Alert.alert('Começou a clicar', 'Clique iniciado')
-        }}
-        onTouchEnd={(event) => {
-          Alert.alert('Toque', 'toque finalizado')
+          Alert.alert('Foguete', 'Não dá ré! 🚀')
         }}
       >
-        <Text>Clique aqui</Text>
+        <Text style={styles.texto}>FOGUETE 🚀</Text>
       </View>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text
+        selectable={true}
+      >Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -27,4 +26,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  texto: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    backgroundColor: 'black',
+    color: 'white',
+    padding: 12,
+    margin: 20,
+    borderRadius: 14
+  }
 });
