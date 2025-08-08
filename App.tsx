@@ -1,29 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, Image, TextInput, Button, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Alert, Image, TextInput, Button, Switch } from 'react-native';
 import React, { useState } from 'react';
 import img from './assets/a.jpg'
 
 export default function App() {
 
   const [usuario, setUsuario] = useState('')
+  const [ligado, setLigado] = useState(false)
+
+  function handleSwitch() {
+    setLigado(!ligado)
+  }
 
   return (
-    <ScrollView style={{flex:1}}>
-      <View style={[styles.container, { backgroundColor: '#f0f0f0' }]}>
+    <View style={[styles.container, { backgroundColor: '#f0f0f0' }]}>
       <Image
         source={img}
         borderRadius={40}
         style={{ height: 300, width: 300 }}
       />
-      <Image
-        source={img}
-        borderRadius={40}
-        style={{ height: 300, width: 300 }}
-      />
-      <Image
-        source={img}
-        borderRadius={40}
-        style={{ height: 300, width: 300 }}
+      <Switch
+        value={ligado}
+        onValueChange={handleSwitch}
       />
       <TextInput
         style={styles.input}
@@ -38,7 +36,6 @@ export default function App() {
       <StatusBar style="auto" />
 
     </View>
-    </ScrollView>
   );
 }
 
