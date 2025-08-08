@@ -14,14 +14,14 @@ export default function App() {
 
   return (
     <View style={[styles.container, { backgroundColor: '#f0f0f0' }]}>
-      <Image
-        source={img}
-        borderRadius={40}
-        style={{ height: 300, width: 300 }}
-      />
       <Switch
         value={ligado}
         onValueChange={handleSwitch}
+      />
+      <Image
+        source={img}
+        borderRadius={40}
+        style={{ height: 300, width: 300, display: ligado? 'flex': 'none' }}
       />
       <TextInput
         style={styles.input}
