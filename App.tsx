@@ -1,9 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert } from 'react-native';
+import { StyleSheet, Text, View, Alert, Image } from 'react-native';
+import img from './assets/a.jpg'
 
 export default function App() {
   return (
     <View style={[styles.container, {backgroundColor: '#f0f0f0'}]}>
+      <Image
+        source={img}
+        borderRadius={40}
+        style={{height: 300, width: 300}}
+      />
       <View
         onTouchStart={(event) => {
           Alert.alert('Foguete', 'não dá ré! 🚀')
