@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, Image } from 'react-native';
+import { StyleSheet, Text, View, Alert, Image, TextInput } from 'react-native';
 import img from './assets/a.jpg'
 
 export default function App() {
@@ -15,6 +15,14 @@ export default function App() {
           Alert.alert('Foguete', 'não dá ré! 🚀')
         }}
       >
+      <TextInput
+        style={styles.input}
+        placeholder='Exemplo de texto'
+      />
+      <TextInput 
+        style={styles.input}
+        keyboardType='decimal-pad'
+      />
         <Text style={[styles.texto, styles.border]}>FOGUETE 🚀</Text>
       </View>
       <Text
@@ -60,5 +68,13 @@ const styles = StyleSheet.create({
     padding: 12,
     margin: 20,
     borderRadius: 14
+  },
+  input: {
+    lineHeight: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 14,
+    textAlign: 'center'
   }
 });
