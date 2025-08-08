@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Alert, Image, TextInput, Button, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import img from './assets/a.jpg'
 
@@ -8,7 +8,18 @@ export default function App() {
   const [usuario, setUsuario] = useState('')
 
   return (
-    <View style={[styles.container, { backgroundColor: '#f0f0f0' }]}>
+    <ScrollView style={{flex:1}}>
+      <View style={[styles.container, { backgroundColor: '#f0f0f0' }]}>
+      <Image
+        source={img}
+        borderRadius={40}
+        style={{ height: 300, width: 300 }}
+      />
+      <Image
+        source={img}
+        borderRadius={40}
+        style={{ height: 300, width: 300 }}
+      />
       <Image
         source={img}
         borderRadius={40}
@@ -27,6 +38,7 @@ export default function App() {
       <StatusBar style="auto" />
 
     </View>
+    </ScrollView>
   );
 }
 
